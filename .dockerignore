@@ -1,0 +1,11 @@
+.git
+**/.git
+.env
+**/.env
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.pem
+*.key
+evidence/
+terraform/

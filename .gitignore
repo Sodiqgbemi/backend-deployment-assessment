@@ -1,0 +1,40 @@
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.*
+*.coverprofile
+profile.cov
+go.work
+go.work.sum
+
+# Environment secrets
+.env
+**/.env
+
+# Terraform local files and state
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!terraform.tfvars.example
+**/terraform.tfvars
+!**/terraform.tfvars.example
+
+# SSH keys and credentials
+*.pem
+*.key
+startuptech-key*
+.aws/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Assessment evidence should be included
