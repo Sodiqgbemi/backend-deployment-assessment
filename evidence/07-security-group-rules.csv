@@ -1,0 +1,11 @@
+GroupId,GroupName,Type,IpProtocol,FromPort,ToPort,IpRanges,Ipv6Ranges,PrefixListIds,UserIdGroupPairs
+sg-053ebc4f59ba5a772,startuptech-alb-sg,Inbound/Ingress,tcp,80,80,0.0.0.0/0 (Allow HTTP),,,
+sg-053ebc4f59ba5a772,startuptech-alb-sg,Inbound/Ingress,tcp,443,443,0.0.0.0/0 (Allow HTTPS),,,
+sg-053ebc4f59ba5a772,startuptech-alb-sg,Outbound/Egress,"'-1",,,0.0.0.0/0,,,
+sg-0fb3f63e64634fa2e,startuptech-backend-sg,Inbound/Ingress,tcp,8080,8080,,,,sg-053ebc4f59ba5a772 (Application traffic from ALB)
+sg-0fb3f63e64634fa2e,startuptech-backend-sg,Inbound/Ingress,tcp,22,22,,,,sg-05663079e69e4e6b0 (SSH from Bastion)
+sg-0fb3f63e64634fa2e,startuptech-backend-sg,Outbound/Egress,"'-1",,,0.0.0.0/0,,,
+sg-021e2c0861299c064,startuptech-mongodb-sg,Inbound/Ingress,tcp,27017,27017,,,,sg-0fb3f63e64634fa2e (MongoDB from backend)
+sg-021e2c0861299c064,startuptech-mongodb-sg,Outbound/Egress,"'-1",,,0.0.0.0/0,,,
+sg-05663079e69e4e6b0,startuptech-bastion-sg,Inbound/Ingress,tcp,22,22,102.88.111.65/32 (SSH from my IP),,,
+sg-05663079e69e4e6b0,startuptech-bastion-sg,Outbound/Egress,"'-1",,,0.0.0.0/0,,,
